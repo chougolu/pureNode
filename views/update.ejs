@@ -1,0 +1,26 @@
+<%- include('header.ejs') %>
+<div class="container">
+  <div class="alert alert-danger">
+    Edit
+  </div>
+  <form action="/update" method="post">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" name="name" value="<%= edData.name %>" class="form-control">
+        <input type="hidden" name="id" value="<%= edData._id %>" class="form-control">
+
+      </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" name="email" value="<%= edData.email %>"  class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" name="password" value="<%= edData.password %>"  class="form-control">
+      </div>
+    <div class="form-group">
+      <button class="btn btn-success">Update</button>
+    </div>
+  </form>
+</div>
+<%- include('footer.ejs') %>

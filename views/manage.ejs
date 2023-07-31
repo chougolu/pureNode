@@ -1,0 +1,29 @@
+<%- include('header')%>
+<div class="container">
+    <div class="alert alert-danger">
+        <h3 class="text-center">Manage</h3>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var item of dbRecord ) {%>
+                <tr>
+                  <td><%= item.name %></td>
+                  <td><%= item.email %></td>
+                  <td>
+                    <a href="/delData/<%= item._id %>" class="btn btn-danger">Delete</a>
+                    <a href="/ediData/<%= item._id %>" class="btn btn-success">Edit</a>
+                  </td>
+                </tr>
+             <% } %>
+        </tbody>
+
+    </table>
+</div>
+<%- include('footer')%>
